@@ -1,0 +1,423 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>For表达式 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="006.html" />
+    
+    
+    <link rel="prev" href="004.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    导言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="base.html">
+            
+                <a href="base.html">
+            
+                    
+                    基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="type.html">
+            
+                <a href="type.html">
+            
+                    
+                    统一类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="001.html">
+            
+                <a href="001.html">
+            
+                    
+                    类、特质、混入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="002.html">
+            
+                <a href="002.html">
+            
+                    
+                    模式匹配
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="003.html">
+            
+                <a href="003.html">
+            
+                    
+                    高阶函数、嵌套方法、柯里化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="004.html">
+            
+                <a href="004.html">
+            
+                    
+                    正则表达式模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8" data-path="005.html">
+            
+                <a href="005.html">
+            
+                    
+                    For表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="006.html">
+            
+                <a href="006.html">
+            
+                    
+                    类型相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="implicits.html">
+            
+                <a href="implicits.html">
+            
+                    
+                    隐式参数、隐式转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="annotation.html">
+            
+                <a href="annotation.html">
+            
+                    
+                    注解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="packages.html">
+            
+                <a href="packages.html">
+            
+                    
+                    包、导入、包对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="exception.html">
+            
+                <a href="exception.html">
+            
+                    
+                    异常处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="questions.html">
+            
+                <a href="questions.html">
+            
+                    
+                    问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >For表达式</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h3 id="for&#x8868;&#x8FBE;&#x5F0F;">For&#x8868;&#x8FBE;&#x5F0F;</h3>
+<p>Scala &#x7528;&#x8F7B;&#x91CF;&#x7EA7;&#x7684;&#x6807;&#x8BB0;&#x65B9;&#x5F0F;&#x6765;&#x8868;&#x793A;&#x5E8F;&#x5217;&#x63A8;&#x5BFC;&#xFF0C;&#x63A8;&#x5BFC;&#x4F7F;&#x7528;&#x7684;&#x5F62;&#x5F0F;&#x4E3A; <code>for (enumerators) yield e</code> &#x7684; for &#x8868;&#x8FBE;&#x5F0F;&#xFF1B;<code>enumerators</code> &#x6307;&#x4E00;&#x7EC4;&#x4EE5;&#x5206;&#x53F7;&#x5206;&#x9694;&#x7684;&#x679A;&#x4E3E;&#x5668;&#x3002;&#x4E00;&#x4E2A;&#x679A;&#x4E3E;&#x5668;&#x53EF;&#x4EE5;&#x662F;&#x4E00;&#x4E2A;&#x4EA7;&#x751F;&#x65B0;&#x53D8;&#x91CF;&#x5F97;&#x751F;&#x6210;&#x5668;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x4E00;&#x4E2A;&#x8FC7;&#x6EE4;&#x5668;&#x3002;for &#x8868;&#x8FBE;&#x5F0F;&#x5728;&#x679A;&#x4E3E;&#x5668;&#x4EA7;&#x751F;&#x7684;&#x6BCF;&#x6B21;&#x7ED1;&#x5B9A;&#x4E2D;&#x90FD;&#x4F1A;&#x8BA1;&#x7B97; <code>e</code> &#x503C;&#xFF0C;&#x5E76;&#x5728;&#x5FAA;&#x73AF;&#x7ED3;&#x675F;&#x540E;&#x8FD4;&#x56DE;&#x8FD9;&#x4E9B;&#x503C;&#x7EC4;&#x6210;&#x7684;&#x5E8F;&#x5217;&#x3002;&#x6BD4;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-scala"><span class="hljs-keyword">case</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span>(<span class="hljs-params">name: <span class="hljs-type">String</span>, age: <span class="hljs-type">Int</span></span>)</span>
+
+<span class="hljs-keyword">val</span> userBase = <span class="hljs-type">List</span>(<span class="hljs-type">User</span>(<span class="hljs-string">&quot;Travis&quot;</span>, <span class="hljs-number">28</span>),
+  <span class="hljs-type">User</span>(<span class="hljs-string">&quot;Kelly&quot;</span>, <span class="hljs-number">33</span>),
+  <span class="hljs-type">User</span>(<span class="hljs-string">&quot;Jennifer&quot;</span>, <span class="hljs-number">44</span>),
+  <span class="hljs-type">User</span>(<span class="hljs-string">&quot;Dennis&quot;</span>, <span class="hljs-number">23</span>))
+
+<span class="hljs-keyword">val</span> twentySomethings = <span class="hljs-keyword">for</span> (user &lt;- userBase <span class="hljs-keyword">if</span> (user.age &gt;=<span class="hljs-number">20</span> &amp;&amp; user.age &lt; <span class="hljs-number">30</span>))
+  <span class="hljs-keyword">yield</span> user.name  <span class="hljs-comment">// i.e. add this to a list</span>
+
+twentySomethings.foreach(name =&gt; println(name))  <span class="hljs-comment">// prints Travis Dennis</span>
+</code></pre>
+<p>&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4F7F;&#x7528;&#x4E86;&#x4E24;&#x4E2A;&#x751F;&#x6210;&#x5668;&#xFF1A;</p>
+<pre><code class="lang-scala"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">foo</span></span>(n: <span class="hljs-type">Int</span>, v: <span class="hljs-type">Int</span>) =
+   <span class="hljs-keyword">for</span> (i &lt;- <span class="hljs-number">0</span> until n;
+        j &lt;- i until n <span class="hljs-keyword">if</span> i + j == v)
+   <span class="hljs-keyword">yield</span> (i, j)
+
+foo(<span class="hljs-number">10</span>, <span class="hljs-number">10</span>) foreach {
+  <span class="hljs-keyword">case</span> (i, j) =&gt;
+    println(<span class="hljs-string">s&quot;(<span class="hljs-subst">$i</span>, <span class="hljs-subst">$j</span>) &quot;</span>)  <span class="hljs-comment">// prints (1, 9) (2, 8) (3, 7) (4, 6) (5, 5)</span>
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="004.html" class="navigation navigation-prev " aria-label="Previous page: 正则表达式模式">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="006.html" class="navigation navigation-next " aria-label="Next page: 类型相关">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"For表达式","level":"1.8","depth":1,"next":{"title":"类型相关","level":"1.9","depth":1,"path":"006.md","ref":"006.md","articles":[]},"previous":{"title":"正则表达式模式","level":"1.7","depth":1,"path":"004.md","ref":"004.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"005.md","mtime":"2021-05-25T07:42:58.504Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-07-07T01:53:35.215Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

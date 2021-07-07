@@ -1,0 +1,3 @@
+### 问题
+
+scala object，spark 应用中，Dataset 的 `foreachPartition` 中使用局部变量 Redis 连接池时，报错——连接池不能序列化。而将连接池定义为object 常量属性后，`foreachPartition` 中再使用它就没有问题了。不晓得为什么……

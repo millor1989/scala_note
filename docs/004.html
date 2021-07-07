@@ -1,0 +1,438 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>正则表达式模式 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="005.html" />
+    
+    
+    <link rel="prev" href="003.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    导言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="base.html">
+            
+                <a href="base.html">
+            
+                    
+                    基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="type.html">
+            
+                <a href="type.html">
+            
+                    
+                    统一类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="001.html">
+            
+                <a href="001.html">
+            
+                    
+                    类、特质、混入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="002.html">
+            
+                <a href="002.html">
+            
+                    
+                    模式匹配
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="003.html">
+            
+                <a href="003.html">
+            
+                    
+                    高阶函数、嵌套方法、柯里化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7" data-path="004.html">
+            
+                <a href="004.html">
+            
+                    
+                    正则表达式模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="005.html">
+            
+                <a href="005.html">
+            
+                    
+                    For表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="006.html">
+            
+                <a href="006.html">
+            
+                    
+                    类型相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="implicits.html">
+            
+                <a href="implicits.html">
+            
+                    
+                    隐式参数、隐式转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="annotation.html">
+            
+                <a href="annotation.html">
+            
+                    
+                    注解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="packages.html">
+            
+                <a href="packages.html">
+            
+                    
+                    包、导入、包对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="exception.html">
+            
+                <a href="exception.html">
+            
+                    
+                    异常处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="questions.html">
+            
+                <a href="questions.html">
+            
+                    
+                    问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >正则表达式模式</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h3 id="&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x6A21;&#x5F0F;">&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x6A21;&#x5F0F;</h3>
+<p>&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x662F;&#x7528;&#x6765;&#x627E;&#x51FA;&#x6570;&#x636E;&#x4E2D;&#x5339;&#x914D;&#x6307;&#x5B9A;&#x6A21;&#x5F0F;&#xFF08;&#x6216;&#x7F3A;&#x5C11;&#x6307;&#x5B9A;&#x6A21;&#x5F0F;&#xFF09;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;</p>
+<p><code>.r</code>&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x5C06;&#x4EFB;&#x610F;&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6362;&#x4E3A;&#x4E00;&#x4E2A;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x7C7B;&#x578B; <code>Regex</code>&#x3002;<code>findFirstMatchIn</code> &#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x7B2C;&#x4E00;&#x4E2A;&#x5339;&#x914D;&#x7684;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-scala"><span class="hljs-keyword">import</span> scala.util.matching.<span class="hljs-type">Regex</span>
+
+<span class="hljs-keyword">val</span> numberPattern: <span class="hljs-type">Regex</span> = <span class="hljs-string">&quot;[0-9]&quot;</span>.r
+
+numberPattern.findFirstMatchIn(<span class="hljs-string">&quot;awesomepassword&quot;</span>) <span class="hljs-keyword">match</span> {
+  <span class="hljs-keyword">case</span> <span class="hljs-type">Some</span>(_) =&gt; println(<span class="hljs-string">&quot;Password OK&quot;</span>)
+  <span class="hljs-keyword">case</span> <span class="hljs-type">None</span> =&gt; println(<span class="hljs-string">&quot;Password must contain a number&quot;</span>)
+}
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x62EC;&#x53F7;&#x6765;&#x540C;&#x65F6;&#x5339;&#x914D;&#x591A;&#x7EC4;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;<code>findAllMatchIn</code> &#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x6240;&#x6709;&#x5339;&#x914D;&#x7684;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-scala">import scala.util.matching.Regex
+
+val keyValPattern: Regex = &quot;([0-9a-zA-Z-#() ]+): ([0-9a-zA-Z-#() ]+)&quot;.r
+
+val input: String =
+  &quot;&quot;&quot;background-color: #A03300;
+    |background-image: url(img/header100.png);
+    |background-position: top center;
+    |background-repeat: repeat-x;
+    |background-size: 2160px 108px;
+    |margin: 0;
+    |height: 108px;
+    |width: 100%;&quot;&quot;&quot;.stripMargin
+
+for (patternMatch &lt;- keyValPattern.findAllMatchIn(input))
+  println(s&quot;key: ${patternMatch.group(1)} value: ${patternMatch.group(2)}&quot;)
+</code></pre>
+<p>&#x672C;&#x4F8B;&#x89E3;&#x6790;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x7684;&#x591A;&#x4E2A;&#x952E;&#x548C;&#x503C;&#xFF0C;&#x5176;&#x4E2D;&#x6BCF;&#x4E2A;&#x5339;&#x914D;&#x6709;&#x4E00;&#x5BF9;&#x5B50;&#x5339;&#x914D;&#xFF0C;&#x8F93;&#x51FA;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-scala">key: background-color value: #<span class="hljs-type">A03300</span>
+key: background-image value: url(img
+key: background-position value: top center
+key: background-repeat value: repeat-x
+key: background-size value: <span class="hljs-number">2160</span>px <span class="hljs-number">108</span>px
+key: margin value: <span class="hljs-number">0</span>
+key: height value: <span class="hljs-number">108</span>px
+key: width value: <span class="hljs-number">100</span>
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="003.html" class="navigation navigation-prev " aria-label="Previous page: 高阶函数、嵌套方法、柯里化">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="005.html" class="navigation navigation-next " aria-label="Next page: For表达式">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"正则表达式模式","level":"1.7","depth":1,"next":{"title":"For表达式","level":"1.8","depth":1,"path":"005.md","ref":"005.md","articles":[]},"previous":{"title":"高阶函数、嵌套方法、柯里化","level":"1.6","depth":1,"path":"003.md","ref":"003.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"004.md","mtime":"2021-05-21T08:19:11.279Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-07-07T01:53:35.215Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
