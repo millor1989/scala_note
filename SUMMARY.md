@@ -13,5 +13,6 @@
 * [注解](annotation.md)
 * [包、导入、包对象](packages.md)
 * [异常处理](exception.md)
+* [部分应用函数、偏函数](007.md)
 * [问题](questions.md)
 

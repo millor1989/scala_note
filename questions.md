@@ -1,3 +1,5 @@
 ### 问题
 
-scala object，spark 应用中，Dataset 的 `foreachPartition` 中使用局部变量 Redis 连接池时，报错——连接池不能序列化。而将连接池定义为object 常量属性后，`foreachPartition` 中再使用它就没有问题了。不晓得为什么……
+1、scala object，spark 应用中，Dataset 的 `foreachPartition` 中使用局部变量 Redis 连接池时，报错——连接池不能序列化。而将连接池定义为object 常量属性后，`foreachPartition` 中再使用它就没有问题了。不晓得为什么……
+
+序列化是针对对象的状态，即堆内存的，只有堆内存中的内容可以被序列化，静态成员属于类的状态，位于 JVM 方法区中，不会被序列化，序列化信息中不会包含静态成员；读取静态属性是从方法区读取的，不存在序列化的问题。

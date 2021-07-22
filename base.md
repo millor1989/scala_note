@@ -151,7 +151,7 @@ printName(last = "Smith", first = "John")  // Prints "John Smith"
 
 使用命名参数时，可以不按照参数定义的顺序。可以只对部分参数命名，此时，未命名参数要按照方法签名中的参数顺序放置。
 
-Scala 中可以**为参数提供默认值**，在调用的时候，可以忽略具有默认值得参数：
+Scala 中可以**为参数提供默认值**，在调用的时候，可以忽略具有默认值的参数：
 
 ```scala
 def log(message: String, level: String = "INFO") = println(s"$level: $message")
