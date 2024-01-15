@@ -307,7 +307,7 @@ println(newerId) // 2
 
 类和它的伴生对象可以互相访问其私有成员。
 
-可以使用伴生对象来定义那些在伴生类中不依赖于类的实例化对象而存在的成员变量或方法。
+可以使用伴生对象来定义那些在伴生类中不依赖于类的实例化对象而存在的成员变量或方法，即 Java 中类型的方法，因为 scala 中没有 `static` 关键字，不能定义静态方法，所以可以通过伴生对象来定义属于类的属性或方法。
 
 ```scala
 import scala.math._
@@ -417,3 +417,139 @@ object Main {
     println("Hello, Scala developer!")
 }
 ```
+
+#### 10、命令行工具和 REPL
+
+##### 10.1、`scalac` 和 `scala`
+
+文件 `Main.scala`：
+
+```scala
+object Main {
+  def main(args: Array[String]): Unit =
+    println("Hello, Scala developer!")
+}
+```
+
+命令行执行 `scalac Main.scala` 进行编译，生成两个文件 `Main.calss` 和 `Main$.class`（文件名和对象名可以不同，编译结果都是以对象名命名的），使用 `scala` 命令执行：
+
+```bash
+$ scala -classpath . Main
+Hello, Scala developer!
+
+$ scala Main
+Hello, Scala developer!
+```
+
+删除 `Main.calss` 和 `Main$.class` 任意一个，都将无法执行。
+
+```bash
+# 删除 Main.class
+$ scala Main
+No such file or class on classpath: Main
+
+# 删除 Main$.class
+$ scala Main
+java.lang.ClassNotFoundException: Main$
+        at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
+        at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+        at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+        ...
+```
+
+应用入口 `main` 方法被编译在 `Main.calss` 中，`Main.class` 中的 `main` 方法访问 `Main$.class` 的静态字段 `MODULE$`（字段类型为`Main$`），使用这个字段作为句柄调用 `Main$` 的 `main` 方法。
+
+可以通过 `javap Main$`、`javap Main` 反编译两个 `.class` 文件。
+
+`Main$.class` 的内容可抽象理解为（伪代码）：
+
+```java
+public final class Main$ {  
+    
+    public static final Main$ MODULE$ = new Main$();  
+    
+    public void main(String[] args){  
+        println("Hello, Scala developer!");  
+    }  
+}
+```
+
+`Main.class` 的内容可以抽象理解为（伪代码）：
+
+```java
+public class Main {  
+        
+    public static void main(String[] args){  
+      Main$.MODULE$.main(args);  
+    }     
+}
+```
+
+类似地，**Java 代码引用 Scala 对象的方法**时编码形式除了：`Obj.methodName(params)`，还可以为： `Obj$.MODULE$.methodName(params)`；需要注意的时，如果 `object` 名称与它所在的文件名称不同，使用的是 `object` 名称而不是文件名称。
+
+如果修改 `Main.scala` 为 `class` 不是 `object` 时：
+
+```scala
+class Main {
+  def main(args: Array[String]): Unit =
+    println("Hello, Scala developer!")
+}
+```
+
+执行 `scalac Main.scala` 后只会产生一个 `Main.class` 文件，反编译`Main.class`会发现，它只是一个类型文件没有静态的 `main` 方法，不能执行。
+
+##### 10.2、REPL
+
+编写文件 `test.scala`：
+
+```scala
+object IdFactory {
+  private var counter = 0
+  def create(): Int = {
+    counter += 1
+    counter
+  }
+}
+val newId: Int = IdFactory.create()
+println(newId) // 1
+val newerId: Int = IdFactory.create()
+println(newerId) // 2
+```
+
+由于该文件没有 `main` 方法，使用 `scalac` **进行编译会报错**，可以进入 Scala REPL 执行：
+
+```bash
+# 通过命令行执行命令 scala，进入 scala repl
+$ scala
+Welcome to Scala 2.12.6 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_172).
+Type in expressions for evaluation. Or try :help.
+
+# 在 repl 中，通过 :load 加载并执行文件
+scala> :load test.scala
+Loading test.scala...
+defined object IdFactory
+newId: Int = 1
+1
+newerId: Int = 2
+2
+```
+
+此时类似于执行脚本文件。某些[案例](https://dblab.xmu.edu.cn/blog/953/)中，可以直接命令行执行 `scala test.scala` 运行，但是没能实现。
+
+如果 Repl 需要依赖第三方 jar，可以通过 `-classpath` 添加：
+
+```bash
+$ scala -classpath fastjson-1.2.83.jar
+Welcome to Scala 2.12.6 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_172).
+Type in expressions for evaluation. Or try :help.
+
+scala> import com.alibaba.fastjson.{JSON, JSONObject}
+import com.alibaba.fastjson.{JSON, JSONObject}
+
+scala> printf("output:%s", new JSONObject() {
+     |       put("hello", "scala")
+     |     }.toJSONString)
+output:{"hello":"scala"}
+scala>
+```
+

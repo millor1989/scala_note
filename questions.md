@@ -30,5 +30,8 @@ val res =
   + zzzz
 ```
 
+4.`List.tail` 返回的是一个 `List`（包含除了 `List.head` 之外的所有元素），不是最后一个元素。返回 `List` 最后一个元素应该使用 `List.last`。
 
 
+
+一个不错的 [blog](https://dzone.com/users/4039047/danielciocirlan.html)
